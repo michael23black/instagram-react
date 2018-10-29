@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import * as serviceWorker from './serviceWorker';
-import Main from './containers/CMain/CMain.jsx';
+import Main from './containers/CMain/CMain';
 
 
 import './index.css';
