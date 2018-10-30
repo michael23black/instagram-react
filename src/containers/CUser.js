@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import CProfile from './../CProfile/CProfile.jsx';
-import CSections from './../CSections/CSections.jsx';
-import CPosts from './../CPosts/CPosts.jsx';
-import CFooter from './../CFooter/CFooter.jsx';
+import CProfile from './CProfile.js';
+import CSections from './CSections.js';
+import CPosts from './CPosts.js';
+import CFooter from './CFooter.js';
 
 const SCUser = styled.div`
     display: flex;

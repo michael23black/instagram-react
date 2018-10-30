@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import CHeader from './../CHeader/CHeader.jsx';
-import CUser from './../CUser/CUser.jsx';
+import CHeader from './CHeader.js';
+import CUser from './CUser.js';
 
 const SCMain = styled.div`
     background-color: #fafafa;

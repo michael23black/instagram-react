@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Badge from './../../components/Badge/Badge.jsx';
-import Separator from './../../components/Separator/Separator.jsx';
-import Logo from './../../components/Logo/Logo.jsx';
-import Input from './../../components/Input/Input.jsx';
-import Button from './../../components/Button/Button.jsx';
-import CheckInLink from './../../components/CheckInLink/CheckInLink.jsx';
+import Badge from '../components/Badge/';
+import Separator from '../components/Separator/';
+import Logo from '../components/Logo/';
+import Input from '../components/Input/';
+import Button from '../components/Button/';
+import CheckInLink from '../components/CheckInLink/';
 
 const SCHeader = styled.div`
     display: flex;
@@ -14,10 +14,11 @@ const SCHeader = styled.div`
     justify-content: center;
     position: fixed;
     width: 100%;
-    padding: 20px 0px;
+    padding: ${props => props.scrolled ? '10px 0px' : '20px 0px'};
 	background-color: #ffffff;
 	border-bottom: 1px solid #e6e6e6;
-	z-index: 2;
+    z-index: 2;
+    transition: padding 0.2s linear;
 `
 const SCLimit = styled.div`
     display: flex;
@@ -42,16 +43,44 @@ const SCSides = styled.div`
         display: ${props => props.center ? 'none' : 'flex'};
     }
 `
+const SCVisible = styled.div`
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    opacity: ${props => props.visible ? '1' : '0'};
+    transition: opacity 0.2s linear;
+`
 
 export default class CHeader extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleScroll = this.handleScroll.bind(this);
+        this.state = {scrolled : false, visible : true};
+    }
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    } 
+    handleScroll(event) {
+        if(window.pageYOffset === 0){
+            this.setState({scrolled : false, visible : true});
+        }
+        else{
+            this.setState({scrolled : true, visible : false});
+        }
+    };
     render() {
         return(
-            <SCHeader>
+            <SCHeader scrolled={this.state.scrolled}>
                 <SCLimit>
                     <SCSides left>
                         <Badge />
-                        <Separator />
-                        <Logo />
+                        <SCVisible visible={this.state.visible}>
+                            <Separator />
+                            <Logo />
+                        </SCVisible>
                     </SCSides>
                     <SCSides center>
                         <Input />

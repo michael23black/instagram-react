@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import AboutUsLink from './../../components/AboutUsLink/AboutUsLink.jsx';
-import Copyright from './../../components/Copyright/Copyright.jsx';
+import AboutUsLink from '../components/AboutUsLink/';
+import Copyright from '../components/Copyright/';
 
 const SCFooter = styled.div`
     display: flex;
@@ -16,7 +16,8 @@ const SCFooter = styled.div`
 const SCLinks = styled.div`
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: flex-start;
+    justify-content: flex-start;
+    align-items: center;
     width: 100%;
     
     @media all and (max-width:600px){
