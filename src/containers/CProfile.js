@@ -10,22 +10,25 @@ import Verification from '../components/Verification/';
 import Description from '../components/Description/';
 import Feedback from '../components/Feedback/';
 import Story from '../components/Story/';
+import CStories from './CStories.js';
+
+const avatar = '/images/profile/avatar.jpg';
 
 const SCProfile = styled.div`
 	display: flex;
 	flex-flow: column nowrap;
-	margin: 128px 20px 20px 20px;
+	margin: 128px 20px 0px 20px;
 
-@media all and (max-width:600px){
-		margin: 98px 20px 20px 10px;
+    @media all and (max-width:600px){
+		margin: 98px 10px 0px 10px;
     }
 `
 
 export default class CProfile extends React.Component {
     render() {
         return(
-            <SCProfile>
-                
+            <SCProfile>           
+                <CStories />
             </SCProfile>
         )
     }

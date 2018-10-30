@@ -35,15 +35,11 @@ const posts = [
 ];
 
 export default class CPosts extends React.Component {
-    render() {
-        return(
-            <SCPosts>
-              {
-                posts.map((post, i) => 
-                <Post image={post.url} likes={post.likes} comments={post.comments} key={i}/>
-                )
-              }
-            </SCPosts>
-        )
-    }
-}
+  render() {
+    return(
+      <SCPosts>
+        {posts.map((post, i) =><Post image={post.url} likes={post.likes} comments={post.comments} key={i}/>)}
+      </SCPosts>
+    )
+  }
+};

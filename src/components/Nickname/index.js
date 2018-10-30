@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const SNickname = styled.div`
     font-size: 32px;
     font-weight: lighter; 
+    margin-right: 5px;
 
     @media all and (max-width:600px){
         font-size: 20px;

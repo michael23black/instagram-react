@@ -2,13 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SAvatar = styled.div` 
-
-`
-const SGradient = styled.a`
     padding: 3px; 
-	background: linear-gradient(to top right, #f99e4c, #c82d8e); 
-	border-radius: 50%;	
+    background: linear-gradient(to top right, #f99e4c, #c82d8e); 
+    border-radius: 50%;	
 `
+
 const SImage = styled.img`
     display:block;
 	padding: 1px;
@@ -30,9 +28,7 @@ export default class Avatar extends React.Component {
     render() {
         return(
             <SAvatar>
-                <SGradient>
-                    <SImage src={this.props.imag}/>
-                </SGradient>
+                    <SImage src={this.props.url}/>
             </SAvatar>
         )
     }

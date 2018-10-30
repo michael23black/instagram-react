@@ -13,30 +13,34 @@ const SStory = styled.a`
     text-decoration: none;
     
     @media all and (max-width:600px){
-        width: 85px;
-		height: 85px;
-		min-width: 85px;
-		min-height: 85px;
+        width: 75px;
+		height: 75px;
+		min-width: 75px;
+		min-height: 75px;
     }
 `
 
 const SImage = styled.img`
-    width: 80px;
-    height: 80px;
-    padding: 3px;
-    box-sizing: border-box;
-    border: 1px solid #dbdbdb;
-    border-radius: 50%;
-
+	width: 80px;
+	height: 80px;
+	box-sizing: border-box;
+	padding: 3px;
+	border: 1px solid #dbdbdb;
+	border-radius: 40px;
+    
     @media all and (max-width:600px){
-        width: 60px;
-        width: 60px;
-    }
+		width: 60px;
+		height: 60px;
+	}
 `
 
 const SLabel = styled.span`
     font-size: 14px;
     font-weight: bold;
+
+    @media all and (max-width:600px){
+        font-size: 12px;
+    }
 `
 
 export default class Story extends React.Component {
