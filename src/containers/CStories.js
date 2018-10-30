@@ -7,10 +7,10 @@ const SCStories = styled.div`
 	display: flex;
     flex-direction: row;
     padding-bottom: 50px;  
-    overflow-x: auto;
+    overflow-x: hidden;
 
     @media all and (max-width:600px){
-        margin: 0px -10px -15px -10px;
+        margin: 0px -10px 0px -10px;
 		padding-bottom: 20px;
     }
 `
