@@ -2,12 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const SLogo =styled.div`
+const Component =styled.div`
     margin-top: 7px;
     }
 `
-
-const SImage = styled.img`
+const Image = styled.img`
     height: 29px;
     width: 103px;
 `
@@ -15,9 +14,9 @@ const SImage = styled.img`
 export default class Logo extends React.Component {
     render() {
         return(
-            <SLogo>
-                <SImage src={''} />
-            </SLogo>
+            <Component className={this.props.className}>
+                <Image src={this.props.url} />
+            </Component>
         )
     }
 }

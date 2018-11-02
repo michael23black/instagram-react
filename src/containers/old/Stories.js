@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Story from '../components/Story.js';
+import Story from '../../components/Story.js';
 
 const SCStories = styled.div`
 	display: flex;

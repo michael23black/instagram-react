@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SInput = styled.div`
+const Component = styled.div`
     height: 28px;
 	width: 100%;
 	box-sizing: border-box;
@@ -9,13 +9,14 @@ const SInput = styled.div`
 	border: 1px solid #dbdbdb;
 	border-radius: 5px;
 	cursor: text;
-    
 `
 
 export default class Input extends React.Component {
     render() {
         return(
-            <SInput></SInput>
+            <Component className={this.props.className}>
+
+            </Component>
         )
     }
 }

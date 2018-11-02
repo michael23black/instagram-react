@@ -9,9 +9,6 @@ import Verification from '../components/Verification.js';
 import Description from '../components/Description.js';
 import Feedback from '../components/Feedback.js';
 import Story from '../components/Story.js';
-import CStories from './CStories.js';
-
-const avatar = '/images/profile/avatar.jpg';
 
 const SCProfile = styled.div`
 	display: flex;
@@ -27,7 +24,6 @@ export default class CProfile extends React.Component {
     render() {
         return(
             <SCProfile>           
-                <CStories />
             </SCProfile>
         )
     }

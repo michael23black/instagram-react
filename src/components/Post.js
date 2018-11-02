@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SPost = styled.a`
+const Component = styled.a`
     display: flex;
     align-items: flex-start;
     position: relative;
@@ -10,38 +10,38 @@ const SPost = styled.a`
     margin-bottom: 2.75%;
     cursor: pointer;
 
-    :nth-child(3n+1){
+    &:nth-child(3n+1){
         margin-right: 2.75%;   
     }
-    :nth-child(3n+2){
+    &:nth-child(3n+2){
         margin-right: 2.75%;
     }
-    :nth-last-child(1){
+    &:nth-last-child(1){
         margin-bottom: 0;
     }
-    :nth-last-child(2){
+    &:nth-last-child(2){
         margin-bottom: 0;
     }
-    :nth-last-child(3){
+    &:nth-last-child(3){
         margin-bottom: 0;
     }
 
     @media all and (max-width:600px){
 		width: 32.5%;
         margin-bottom: 1.25%;
-        :nth-child(3n+1){
+        &:nth-child(3n+1){
             margin-right: 1.25%;   
         }
-        :nth-child(3n+2){
+        &:nth-child(3n+2){
             margin-right: 1.25%;
         }
     }
 `
-const SImage = styled.img`
+const Image = styled.img`
     display: block;
     width: 100%;
 `
-const SCounter = styled.div`
+const Counter = styled.div`
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -73,19 +73,19 @@ const SLabel =styled.span`
 export default class Post extends React.Component {
     render() {
         return(
-            <SPost href={this.props.href}>
-                <SImage src={this.props.image}/> 
-                <SCounter>
-                    <SInfo>
-                        <img src={''} alt='Like icon'/>
+            <Component href={this.props.href}>
+                <Image src={this.props.image}/> 
+                <Counter>
+                    {/*<SInfo>
+                        <img src={this.props.}/>
                         <SLabel>{this.props.likes}</SLabel>
                     </SInfo>
                     <SInfo>    
-                        <img src={''} alt='Comment icon'/>
+                        <img src={this.props.}/>
                         <SLabel>{this.props.comments}</SLabel>    
-                    </SInfo>
-                </SCounter>           
-            </SPost>
+                    </SInfo>*/}
+                </Counter>           
+            </Component>
         )
     }
 }

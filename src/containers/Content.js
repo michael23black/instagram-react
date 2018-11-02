@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import Section from '../components/Section.js';
 import Post from '../components/Post.js';
 
-const SCSections = styled.div`
+const Container = styled.div`
+
+`
+const Sections = styled.div`
 	display: flex;
 	flex-flow: row nowrap;
     justify-content: center;
@@ -16,7 +19,7 @@ const SCSections = styled.div`
         margin: 0px;
     }
 `
-const SCImages = styled.div`
+const Images = styled.div`
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -29,15 +32,15 @@ const SCImages = styled.div`
 
 export default class CPosts extends React.Component {
   render() {
-    return(
-      <div>
-        <SCSections>
-          {this.props.buttons.map((button, i) => <Section label={button.label} active={button.active} href={button.href} img={button.img} key={i}/>)}
-        </SCSections>
-        <SCImages>
-          {this.props.posts.map((post, i) =><Post image={post.url} likes={post.likes} comments={post.comments} href={post.href} key={i}/>)}
-        </SCImages>
-      </div>
+    return (
+    	<Container>
+        	<Sections>
+    			{/*this.props.buttons.map((button, i) => <Section label={button.label} active={button.active} href={button.href} img={button.img} key={i}/>)*/}
+       	 	</Sections>
+        	<Images>
+          		{/*posts.map((post, i) =><Post image={post.url} likes={post.likes} comments={post.comments} href={post.href} key={i}/>)*/}
+        	</Images>
+      	</Container>
     )
   }
 };

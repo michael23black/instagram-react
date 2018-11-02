@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const SVerification = styled.img` 
+const Component = styled.img` 
 	margin-right: 20px;
 	height: 18px;
 	width: 18px;
@@ -12,7 +12,7 @@ const SVerification = styled.img`
 export default class Verification extends React.Component {
     render() {
         return(
-            <SVerification src={''} />
+            <Component src={''} />
         )
     }
 }

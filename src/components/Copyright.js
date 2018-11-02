@@ -1,19 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SCopyright = styled.div`
+const Component = styled.span`
     font-weight: bold;
-	color: #999999;
+	color: #999;
     text-transform: uppercase;
-    @media all and (max-width:600px){
-        text-align: center;
-    }
 `
-
 export default class Copyright extends React.Component {
     render() {
         return(
-            <SCopyright>{this.props.label}</SCopyright>
+            <Component className={this.props.className}>
+                {this.props.label}
+            </Component>
         )
     }
 }
