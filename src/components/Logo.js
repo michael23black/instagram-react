@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ILogo from './Logo.png';
 
 const SLogo =styled.div`
     margin-top: 7px;
@@ -17,7 +16,7 @@ export default class Logo extends React.Component {
     render() {
         return(
             <SLogo>
-                <SImage src={ILogo} />
+                <SImage src={''} />
             </SLogo>
         )
     }

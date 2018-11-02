@@ -9,6 +9,7 @@
     "react-list": "^0.8.10",
     "react-scripts": "2.0.5",
     "react-scroll": "^1.7.10",
+    "react-sizeme": "^2.5.2",
     "styled-components": "^4.0.2"
   },
   "scripts": {

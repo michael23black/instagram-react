@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ILike from './Like.png';
-import IComment from './Comment.png';
-
 const SPost = styled.a`
     display: flex;
     align-items: flex-start;
@@ -58,7 +55,7 @@ const SCounter = styled.div`
         flex-flow:column nowrap;
     }
     
-    :hover{
+    &:hover{
         background-color: rgba(0, 0, 0, 0.3);
         opacity:1;
     }
@@ -76,15 +73,15 @@ const SLabel =styled.span`
 export default class Post extends React.Component {
     render() {
         return(
-            <SPost>
+            <SPost href={this.props.href}>
                 <SImage src={this.props.image}/> 
                 <SCounter>
                     <SInfo>
-                        <img src={ILike} alt='Like icon'/>
+                        <img src={''} alt='Like icon'/>
                         <SLabel>{this.props.likes}</SLabel>
                     </SInfo>
                     <SInfo>    
-                        <img src={IComment} alt='Comment icon'/>
+                        <img src={''} alt='Comment icon'/>
                         <SLabel>{this.props.comments}</SLabel>    
                     </SInfo>
                 </SCounter>           

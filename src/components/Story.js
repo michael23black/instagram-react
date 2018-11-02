@@ -46,7 +46,7 @@ const SLabel = styled.span`
 export default class Story extends React.Component {
     render() {
         return(
-            <SStory>
+            <SStory href={this.props.href}>
                 <SImage src={this.props.url}/>
                 <SLabel>{this.props.label}</SLabel>
             </SStory>

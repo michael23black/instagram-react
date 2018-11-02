@@ -1,16 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
-import Badge from '../components/Badge/';
-import Separator from '../components/Separator/';
-import Logo from '../components/Logo/';
-import Input from '../components/Input/';
-import Button from '../components/Button/';
-import CheckInLink from '../components/CheckInLink/';
+import Badge from '../components/Badge.js';
+import Separator from '../components/Separator.js';
+import Logo from '../components/Logo.js';
+import Input from '../components/Input.js';
+import Button from '../components/Button.js';
+import CheckInLink from '../components/CheckInLink.js';
 
 const SCHeader = styled.div`
     display: flex;
-    align-items: center;
     justify-content: center;
     position: fixed;
     width: 100%;
@@ -33,15 +32,23 @@ const SCLimit = styled.div`
 const SCSides = styled.div`
     display: flex;
     flex-flow: row nowrap;
-    flex: ${props => props.center ? 'none' : '1'};
     align-items: center;
-    justify-content: ${props => props.left ? 'flex-start' : props.right ? 'flex-end' : 'stretch'};
-    width: ${props => props.center ? '215px' : 'none'};
-    cursor: ${props => props.left ? 'pointer' : 'default'};
-    
-    @media all and (max-width:800px){
-        display: ${props => props.center ? 'none' : 'flex'};
-    }
+    ${props => props.left && css`
+        flex: 2;
+        justify-content: flex-start;
+        cursor: pointer; 
+    `};
+    ${props => props.center && css`
+        flex: 1;
+        justify-content: stretch;
+        @media all and (max-width:800px){
+            display: none;
+        }
+    `};
+    ${props => props.right && css`
+        flex: 2;
+        justify-content: flex-end;
+    `};
 `
 const SCVisible = styled.div`
     display: flex;
@@ -50,7 +57,6 @@ const SCVisible = styled.div`
     opacity: ${props => props.visible ? '1' : '0'};
     transition: opacity 0.2s linear;
 `
-
 export default class CHeader extends React.Component {
     constructor(props) {
         super(props);

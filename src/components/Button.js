@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SButton = styled.button`
+const SButton = styled.a`
     padding: 5px 9px;
     border: 1px solid #3897f0;
     border-radius: 5px;

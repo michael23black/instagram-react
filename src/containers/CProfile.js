@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Avatar from '../components/Avatar/';
-import Nickname from '../components/Nickname/';
-import Button from '../components/Button/';
-import Counter from '../components/Counter/';
-import Name from '../components/Name/';
-import Verification from '../components/Verification/';
-import Description from '../components/Description/';
-import Feedback from '../components/Feedback/';
-import Story from '../components/Story/';
+import Avatar from '../components/Avatar.js';
+import Button from '../components/Button.js';
+import Counter from '../components/Counter.js';
+import Name from '../components/Name.js';
+import Verification from '../components/Verification.js';
+import Description from '../components/Description.js';
+import Feedback from '../components/Feedback.js';
+import Story from '../components/Story.js';
 import CStories from './CStories.js';
 
 const avatar = '/images/profile/avatar.jpg';
