@@ -6,6 +6,10 @@ import User from './User.js';
 import Footer from './Footer.js';
 
 const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fafafa;
 `
 
 export default class Main extends React.Component {
@@ -28,7 +32,7 @@ export default class Main extends React.Component {
     render() {
         return(
             <Container>
-                <Header scrolled={!this.state.scrolled} settings={settings.header} data={data.header}/>
+                <Header scrolled={!this.state.scrolled} settings={settings.header}/>
                 <User settings={settings.user} data={data.user}/>
                 <Footer settings={settings.footer}/>
             </Container>

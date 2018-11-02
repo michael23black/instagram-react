@@ -11,26 +11,22 @@ import Link from '../components/Link.js';
 
 const Container = styled.div`
     display: flex;
-    justify-content: center;
     position: fixed;
+    justify-content: center;
     width: 100%;
-    padding: 20px 0px;
-	background-color: #ffffff;
+    background-color: #ffffff;
 	border-bottom: 1px solid #e6e6e6;
     z-index: 2;
-    transition: padding 0.2s linear;
+    transition: padding 0.2s linear; 
+`
+const Inner = styled.div`
+    display: flex;
+    flex-basis: 970px;
+    margin: 20px 20px;
 
     ${props => props.scrolled && css`
-        padding: 10px 0px;
-    `};    
-`
-const Limit = styled.div`
-    display: flex;
-    flex-flow: row nowrap;
-    width: 100%;
-	max-width: 970px;
-    height: 36px;
-    margin: 0px 20px;
+        margin: 10px 20px;
+    `};  
 `
 const Sides = styled.div`
     display: flex;
@@ -43,7 +39,7 @@ const Sides = styled.div`
     `};
     ${props => props.center && css`
         justify-content: stretch;
-        width: 215px;
+        flex-basis: 215px;
         @media all and (max-width:750px){
             display: none;
         }
@@ -80,8 +76,8 @@ const StyledLogo = styled(Logo)`
 export default class CHeader extends React.Component {
     render() {
         return(
-            <Container scrolled={this.props.scrolled}>
-                <Limit>
+            <Container>
+                <Inner scrolled={this.props.scrolled}>
                     <Sides as='a' left>
                         <Badge url={this.props.settings.badge.url}/>
                         <StyledSeparator scrolled={this.props.scrolled}/>
@@ -94,7 +90,7 @@ export default class CHeader extends React.Component {
                         <Button label={this.props.settings.button.label} />
                         <StyledLink label={this.props.settings.link.label} />
                     </Sides>
-                </Limit>
+                </Inner>
             </Container>
         )
     }
