@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Avatar from '../components/Avatar.js';
 import Button from '../components/Button.js';
-import Counter from '../components/Counter.js';
 import Name from '../components/Name.js';
 import Verification from '../components/Verification.js';
 import Description from '../components/Description.js';

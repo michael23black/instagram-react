@@ -40,13 +40,20 @@ const StyledLink = styled(Link)`
     color: #003572;
     text-transform: uppercase;
 `
+
 export default class Footer extends React.Component {
     render() {
         return(
             <Container>
                 <Inner>
                     <LinkBlock>
-                        {this.props.settings.links.map((link, i) => <StyledLink label={link.label} href={link.href} key={i}/>)}
+                        {this.props.settings.links.map((link, i) =>
+                            <StyledLink 
+                                label={link.label} 
+                                href={link.href} 
+                                key={i}
+                            />
+                        )}
                     </LinkBlock>
                     <StyledCopyright label={this.props.settings.copyright.label}/>
                 </Inner>

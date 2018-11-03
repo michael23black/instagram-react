@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const Component = styled.a`
     display: flex;
-    align-items: flex-start;
     position: relative;
+    align-items: flex-start;
     height: 100%;
     width: 31.5%;
     margin-bottom: 2.75%;
@@ -29,6 +29,7 @@ const Component = styled.a`
     @media all and (max-width:600px){
 		width: 32.5%;
         margin-bottom: 1.25%;
+
         &:nth-child(3n+1){
             margin-right: 1.25%;   
         }
@@ -39,51 +40,51 @@ const Component = styled.a`
 `
 const Image = styled.img`
     display: block;
-    width: 100%;
 `
 const Counter = styled.div`
     display: flex;
-    flex-flow: row nowrap;
+    position: absolute;
     align-items: center;
     justify-content: center;
-    position: absolute;
     height: 100%;
     width: 100%;
     opacity: 0;
+    transition: opacity 0.05s linear;
 
-    @media all and (max-width:600px){
-        flex-flow:column nowrap;
-    }
-    
     &:hover{
         background-color: rgba(0, 0, 0, 0.3);
         opacity:1;
     }
+
+    @media all and (max-width:600px){
+        flex-flow:column nowrap;
+    }
 `
-const SInfo = styled.div`
+const Inner = styled.div`
     display: flex;
     margin: 0px 15px 8px;
 `
-const SLabel =styled.span`
+const Label =styled.span`
     margin-left: 8px;
     font-size: 18px;
     font-weight: bolder;
     color: #ffffff;
 `
+
 export default class Post extends React.Component {
     render() {
         return(
             <Component href={this.props.href}>
-                <Image src={this.props.image}/> 
+                <Image src={this.props.img}/> 
                 <Counter>
-                    {/*<SInfo>
-                        <img src={this.props.}/>
-                        <SLabel>{this.props.likes}</SLabel>
-                    </SInfo>
-                    <SInfo>    
-                        <img src={this.props.}/>
-                        <SLabel>{this.props.comments}</SLabel>    
-                    </SInfo>*/}
+                    <Inner>
+                        <Image src={this.props.settings.like.url}/>
+                        <Label>{this.props.likes}</Label>
+                    </Inner>
+                    <Inner>
+                        <Image src={this.props.settings.comment.url}/>
+                        <Label>{this.props.comments}</Label>
+                    </Inner>
                 </Counter>           
             </Component>
         )

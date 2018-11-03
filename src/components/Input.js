@@ -15,7 +15,6 @@ export default class Input extends React.Component {
     render() {
         return(
             <Component className={this.props.className}>
-
             </Component>
         )
     }

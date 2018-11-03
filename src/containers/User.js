@@ -15,8 +15,14 @@ export default class User extends React.Component {
     render() {
         return(
             <Container>
-                <Profile settings={this.props.settings.profile} data={this.props.data.profile}/>
-                <Content settings={this.props.settings.content} data={this.props.data.content}/>
+                <Profile 
+                    settings={this.props.settings.profile}
+                    data={this.props.data.profile}
+                />
+                <Content 
+                    settings={this.props.settings.content}
+                    data={this.props.data.content}
+                />
             </Container>
         )
     }

@@ -16,13 +16,13 @@ const Container = styled.div`
     width: 100%;
     background-color: #ffffff;
 	border-bottom: 1px solid #e6e6e6;
-    z-index: 2;
-    transition: padding 0.2s linear; 
+    z-index: 2; 
 `
 const Inner = styled.div`
     display: flex;
     flex-basis: 970px;
     margin: 20px 20px;
+    transition: margin 0.2s linear;
 
     ${props => props.scrolled && css`
         margin: 10px 20px;
@@ -81,7 +81,10 @@ export default class CHeader extends React.Component {
                     <Sides as='a' left>
                         <Badge url={this.props.settings.badge.url}/>
                         <StyledSeparator scrolled={this.props.scrolled}/>
-                        <StyledLogo url={this.props.settings.logo.url} scrolled={this.props.scrolled}/>
+                        <StyledLogo 
+                            url={this.props.settings.logo.url} 
+                            scrolled={this.props.scrolled}
+                        />
                     </Sides>
                     <Sides center>
                         <Input />
