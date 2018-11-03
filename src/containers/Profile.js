@@ -10,21 +10,19 @@ import Description from '../components/Description.js';
 import Feedback from '../components/Feedback.js';
 import Story from '../components/Story.js';
 
-const SCProfile = styled.div`
-	display: flex;
-	flex-flow: column nowrap;
-	margin: 128px 20px 0px 20px;
+const Container = styled.div`
+	margin: 130px 20px 0px 20px;
 
     @media all and (max-width:600px){
-		margin: 98px 10px 0px 10px;
+		margin: 100px 10px 0px 10px;
     }
 `
 
 export default class CProfile extends React.Component {
     render() {
         return(
-            <SCProfile>           
-            </SCProfile>
+            <Container>           
+            </Container>
         )
     }
 } 
