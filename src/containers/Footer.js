@@ -41,23 +41,29 @@ const StyledLink = styled(Link)`
     text-transform: uppercase;
 `
 
-export default class Footer extends React.Component {
+class Footer extends React.Component {
     render() {
         return(
             <Container>
                 <Inner>
                     <LinkBlock>
-                        {this.props.settings.links.map((link, i) =>
-                            <StyledLink 
-                                label={link.label} 
-                                href={link.href} 
-                                key={i}
-                            />
-                        )}
+                        <StyledLink label='о нас' />
+                        <StyledLink label='поддержка' />
+                        <StyledLink label='пресса' />
+                        <StyledLink label='api' />
+                        <StyledLink label='вакансии' />
+                        <StyledLink label='конфеденциальность' />
+                        <StyledLink label='условия' />
+                        <StyledLink label='директория' />
+                        <StyledLink label='профили' />
+                        <StyledLink label='хэштеги' />
+                        <StyledLink label='язык' />
                     </LinkBlock>
-                    <StyledCopyright label={this.props.settings.copyright.label}/>
+                    <StyledCopyright label='@ 2018 instagram' />
                 </Inner>
             </Container>
         )
     }
 }
+
+export default Footer;

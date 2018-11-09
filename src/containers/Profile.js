@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {withSize} from 'react-sizeme';
 
 import Avatar from '../components/Avatar.js';
 import Button from '../components/Button.js';
@@ -9,6 +10,8 @@ import Description from '../components/Description.js';
 import Feedback from '../components/Feedback.js';
 import Story from '../components/Story.js';
 
+import data from '../json/Data.json';
+
 const Container = styled.div`
 	margin: 130px 20px 0px 20px;
 
@@ -17,11 +20,28 @@ const Container = styled.div`
     }
 `
 
-export default class CProfile extends React.Component {
+class Profile extends React.Component {
+    
+    renderMin() {
+        return(<div></div>)
+    }
+    
     render() {
+        const {width} = this.props.size;
+
+        let message;
+        if(width > 500) {
+            message = "shirina bolshe pyatisot"
+        } else {
+            message = "shirina menshe 4em nada"
+        }
+
         return(
-            <Container>           
+            <Container>
+                {message}
             </Container>
         )
     }
 } 
+
+export default withSize()(Profile);

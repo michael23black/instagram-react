@@ -5,9 +5,8 @@ const Component = styled.a`
     display: flex;
     position: relative;
     align-items: flex-start;
-    height: 100%;
     width: 31.5%;
-    margin-bottom: 2.75%;
+    margin-top: 2.75%;
     cursor: pointer;
 
     &:nth-child(3n+1){
@@ -16,14 +15,14 @@ const Component = styled.a`
     &:nth-child(3n+2){
         margin-right: 2.75%;
     }
-    &:nth-last-child(1){
-        margin-bottom: 0;
+    &:nth-child(1){
+        margin-top: 0;
     }
-    &:nth-last-child(2){
-        margin-bottom: 0;
+    &:nth-child(2){
+        margin-top: 0;
     }
-    &:nth-last-child(3){
-        margin-bottom: 0;
+    &:nth-child(3){
+        margin-top: 0;
     }
 
     @media all and (max-width:600px){
@@ -40,14 +39,15 @@ const Component = styled.a`
 `
 const Image = styled.img`
     display: block;
+    flex: 1;
 `
 const Counter = styled.div`
     display: flex;
     position: absolute;
     align-items: center;
     justify-content: center;
-    height: 100%;
     width: 100%;
+    height: 100%;
     opacity: 0;
     transition: opacity 0.05s linear;
 
@@ -78,11 +78,11 @@ export default class Post extends React.Component {
                 <Image src={this.props.img}/> 
                 <Counter>
                     <Inner>
-                        <Image src={this.props.settings.like.url}/>
+                        <Image src={this.props.settings.likeImg}/>
                         <Label>{this.props.likes}</Label>
                     </Inner>
                     <Inner>
-                        <Image src={this.props.settings.comment.url}/>
+                        <Image src={this.props.settings.commentImg}/>
                         <Label>{this.props.comments}</Label>
                     </Inner>
                 </Counter>           

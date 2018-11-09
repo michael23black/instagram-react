@@ -66,9 +66,9 @@ const Label =styled.span`
 export default class Section extends React.Component {
     render() {
         return(
-            <Component href={this.props.href}>
-                <Image src={this.props.img}/>
-                <Label>
+            <Component active={this.props.active} onClick={this.props.onClick} href={this.props.href}>
+                <Image active={this.props.active} src={this.props.img}/>
+                <Label active={this.props.active}>
                     {this.props.label}
                 </Label>
             </Component>
