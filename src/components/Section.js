@@ -2,10 +2,11 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 
 const Component = styled.a`
-    display: flex;
+    display: ${props => props.have ? 'none' : 'flex'};
     flex-flow: row nowrap;
     align-items: center;
     height: 52px;
+    margin-right: 60px;
     text-decoration: none;
     
     ${props => props.active && css`
@@ -13,15 +14,13 @@ const Component = styled.a`
         margin-top: -1px;
     `};
     
-    &:first-child{
-        margin-right: 60px;
+    &:last-child{
+        margin-right: 0px;
     }
     
     @media all and (max-width:600px){
         border: none;
-        &:first-child{
-            margin: 0px;
-        }
+        margin: 0px;
     }
     
 `
@@ -66,7 +65,7 @@ const Label =styled.span`
 export default class Section extends React.Component {
     render() {
         return(
-            <Component active={this.props.active} onClick={this.props.onClick} href={this.props.href}>
+            <Component have={this.props.have} active={this.props.active} onClick={this.props.onClick} href={this.props.href}>
                 <Image active={this.props.active} src={this.props.img}/>
                 <Label active={this.props.active}>
                     {this.props.label}

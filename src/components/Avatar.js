@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Component = styled.div` 
     display: flex;
     padding: 3px; 
-    background: linear-gradient(to top right, #f99e4c, #c82d8e); 
+    background: ${props => props.newStory ? 'linear-gradient(to top right, #f99e4c, #c82d8e)' : 'none'}; 
     border-radius: 50%;	
 `
 
@@ -28,7 +28,7 @@ const Image = styled.img`
 export default class Avatar extends React.Component {
     render() {
         return(
-            <Component>
+            <Component newStory={this.props.newStory}>
                 <Image src={this.props.url}/>
             </Component>
         )

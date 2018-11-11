@@ -44,23 +44,33 @@ class Content extends React.Component {
 	}
 	render() {
 		const {content} = this.state;
-		const posts = content === 'publication' ? data.content.posts : data.content.tagged;
+		const posts = content === 'publication' ? data.content.posts : content === 'tagged' ? data.content.tagged : data.content.igtv;
 		return (
 			<Container>
 				<InnerSections>
 					<Section
 						onClick={() => this.setContent('publication')}
 						active={content === 'publication'}
+						have={data.content.posts.length === 0}
 						label='Публикации' 
 						img='/images/service/publication.png' 
 						key={1}
+					/>
+					<Section
+						onClick={() => this.setContent('igtv')}
+						active={content === 'igtv'}
+						have={data.content.igtv.length === 0}
+						label='IGTV' 
+						img='/images/service/tv.png'
+						key={2}
 					/> 
 					<Section
 						onClick={() => this.setContent('tagged')}
 						active={content === 'tagged'}
+						have={data.content.tagged.length === 0}
 						label='Отметки' 
 						img='/images/service/tagged.png'
-						key={2}
+						key={3}
 					/>
 				</InnerSections>
 				<InnerPosts>

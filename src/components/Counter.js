@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const Component = styled.a`
     display: flex;
     flex-flow: row wrap;
-    font-size: 16px;
     margin-right: 40px;
+    font-size: 16px;
 
     &:last-child{
         margin-right: 0px;

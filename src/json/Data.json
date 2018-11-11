@@ -9,6 +9,7 @@
             { "label" : "#f52grams", "view" : "hashtag" },
             { "label" : "f52.co/instagram", "view" : "link" }
         ],
+        "newStory" : true,
         "followers" : "2млн",
         "following" : "773",
         "publications" : "8 174",
@@ -37,9 +38,18 @@
             { "url" : "/images/profile/posts-sketch/14.png", "likes" : "134k", "comments" : 444 },
             { "url" : "/images/profile/posts-sketch/15.png", "likes" : "13k", "comments" : 378 },
             { "url" : "/images/profile/posts-sketch/16.png", "likes" : "453k", "comments" : 144 },
-            { "url" : "/images/profile/posts-sketch/17.png", "likes" : "367k", "comments" : 967 }
+            { "url" : "/images/profile/posts-sketch/17.png", "likes" : "367k", "comments" : 967 },
+            { "url" : "/images/profile/posts-sketch/18.png", "likes" : "432k", "comments" : 765 }
+        ],
+        "igtv" : [
         ],
         "tagged" : [
+            { "url" : "/images/profile/tagged-sketch/1.png", "likes" : "190k", "comments" : 945 },
+            { "url" : "/images/profile/tagged-sketch/2.png", "likes" : "14k", "comments" : 450 },
+            { "url" : "/images/profile/tagged-sketch/3.png", "likes" : "2m", "comments" : "3k" },
+            { "url" : "/images/profile/tagged-sketch/4.png", "likes" : "355", "comments" : 65 },
+            { "url" : "/images/profile/tagged-sketch/5.png", "likes" : "23k", "comments" : 655 },
+            { "url" : "/images/profile/tagged-sketch/6.png", "likes" : "10m", "comments" : "10k" }
         ]
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SStory = styled.a`
+const Component = styled.a`
     display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
@@ -21,7 +21,7 @@ const SStory = styled.a`
     }
 `
 
-const SImage = styled.img`
+const Image = styled.img`
 	width: 80px;
 	height: 80px;
 	box-sizing: border-box;
@@ -36,7 +36,7 @@ const SImage = styled.img`
 	}
 `
 
-const SLabel = styled.span`
+const Label = styled.span`
     font-size: 14px;
     font-weight: bold;
 
@@ -49,10 +49,10 @@ const SLabel = styled.span`
 export default class Story extends React.Component {
     render() {
         return(
-            <SStory href={this.props.href}>
-                <SImage src={this.props.url}/>
-                <SLabel>{this.props.label}</SLabel>
-            </SStory>
+            <Component href={this.props.href}>
+                <Image src={this.props.url}/>
+                <Label>{this.props.label}</Label>
+            </Component>
         )
     }
 }

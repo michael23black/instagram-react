@@ -4,6 +4,7 @@ import {withSize} from 'react-sizeme';
 
 import Avatar from '../components/Avatar.js';
 import Button from '../components/Button.js';
+import ButtonProfile from '../components/ButtonProfile.js';
 import Counter from '../components/Counter.js';
 import Name from '../components/Name.js';
 import Nickname from '../components/Nickname.js';
@@ -33,7 +34,6 @@ const Inner = styled.div`
 
     @media all and (max-width:600px){
 		margin: 0px 10px 20px 10px;
-        flex: 0;
         justify-content: flex-start;
     }
 `
@@ -42,11 +42,20 @@ const InnerLeft = styled(Inner)`
     align-items: flex-start;
     justify-content: center;
     margin-right: 30px;
+
+    @media all and (max-width:600px){
+        flex: 0;
+    }
 `
 const InnerRight = styled(Inner)`
     flex: 2;
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 15px;
+
+    @media all and (max-width:600px){
+        flex: 1;
+    }
 `
 const InnerBlock = styled.div`
     display: flex;
@@ -63,9 +72,6 @@ const CounterBlock = styled(InnerBlock)`
     }
 `
 const NameBlock = styled(InnerBlock)`
-    @media all and (max-width:600px){
-		margin-bottom: 10px;
-    }
 `
 const User = styled.div`
     font-size: 16px;
@@ -86,6 +92,10 @@ const StoryBlock = styled.div`
 		padding-bottom: 20px;
     }
 `
+const StyledButton = styled(Button)`
+    width: calc(100% - 20px);
+    max-width: 240px;
+`
 
 class Profile extends React.Component {
     renderWide(){
@@ -93,7 +103,10 @@ class Profile extends React.Component {
             <Container>
                 <Info>
                     <InnerLeft>
-                        <Avatar url={data.profile.avatar}/>
+                        <Avatar 
+                            url={data.profile.avatar}
+                            newStory={data.profile.newStory}
+                        />
                     </InnerLeft>
                     <InnerRight>
                         <NameBlock>
@@ -103,11 +116,12 @@ class Profile extends React.Component {
                                 active={data.profile.verification} 
                             />
                             <Button label='Подписаться' />
+                            <ButtonProfile />
                         </NameBlock>
                         <CounterBlock>
-                            <Counter count={data.profile.publications} label='публикаций' />
-                            <Counter count={data.profile.followers} label='подписчиков' />
-                            <Counter count={data.profile.following} label='подписки' />
+                            <Counter count={data.profile.publications} label='публикаций'/>
+                            <Counter count={data.profile.followers} label='подписчиков'/>
+                            <Counter count={data.profile.following} label='подписки'/>
                         </CounterBlock>
                         <User>
                             <Name username={data.profile.name}/>
@@ -139,7 +153,10 @@ class Profile extends React.Component {
             <Container>
                 <Info>
                     <InnerLeft>
-                        <Avatar url={data.profile.avatar}/>
+                        <Avatar 
+                            url={data.profile.avatar}
+                            newStory={data.profile.newStory}
+                        />
                     </InnerLeft>
                     <InnerRight>
                         <NameBlock>
@@ -148,8 +165,9 @@ class Profile extends React.Component {
                                 url='/images/service/verification.png' 
                                 active={data.profile.verification} 
                             />
+                            <ButtonProfile />
                         </NameBlock>
-                        <Button label='Подписаться' />
+                        <StyledButton label='Подписаться' />
                     </InnerRight>
                 </Info>
                 <User>

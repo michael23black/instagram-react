@@ -37,7 +37,7 @@ const SideLeft = styled(Side)`
 const SideCenter = styled(Side)`
     justify-content: stretch;
     flex-basis: 215px;
-    @media all and (max-width:750px){
+    @media all and (max-width:650px){
         display: none;
     }
 `
@@ -45,22 +45,28 @@ const SideRight = styled(Side)`
     flex: 2;
     justify-content: flex-end;
 `
-const StyledLink = styled(Link)`
-    margin-left: 15px;
-    font-size: 15px;
-    color: #3897f0;
-    
-    @media all and (max-width:450px){
-        display: none;
-    }
-`
 const StyledSeparator = styled(Separator)`
     transition: opacity 0.2s linear;
     opacity: ${props => props.scrolled ? '0' : '1'};
+
+    @media all and (max-width:600px){
+        display: none;
+    }
 `
 const StyledLogo = styled(Logo)`
     transition: opacity 0.2s linear;
     opacity: ${props => props.scrolled ? '0' : '1'};
+
+    @media all and (max-width:600px){
+        display: none;
+    }
+`
+const StyledIcon = styled(Badge)`
+    margin-right: 30px;
+
+    &:last-child{
+        margin: 0px;
+    }
 `
 
 class Header extends React.Component {
@@ -77,8 +83,9 @@ class Header extends React.Component {
                         <Input />
                     </SideCenter>
                     <SideRight>
-                        <Button label='Войти' />
-                        <StyledLink label='Зарегистрироваться' />
+                        <StyledIcon url='/images/service/search.png' />
+                        <StyledIcon url='/images/service/activity.png' />
+                        <StyledIcon url='/images/service/profile.png' />
                     </SideRight>
                 </Inner>
         </Container>
