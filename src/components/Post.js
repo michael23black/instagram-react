@@ -27,7 +27,7 @@ const Component = styled.a`
 
     @media all and (max-width:600px){
 		width: 32.5%;
-        margin-bottom: 1.25%;
+        margin-top: 1.25%;
 
         &:nth-child(3n+1){
             margin-right: 1.25%;   

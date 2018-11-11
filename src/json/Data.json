@@ -1,6 +1,23 @@
 {
     "profile" : {
-
+        "avatar" : "/images/profile/avatar.jpg",
+        "nickname" : "food52",
+        "verification" : true,
+        "name" : "Food52",
+        "text" : "Eat thoughtfully, live joyfully. 🍴Hit the link below to get the recipes and shop our feed. ⤵",
+        "feedback" : [
+            { "label" : "#f52grams", "view" : "hashtag" },
+            { "label" : "f52.co/instagram", "view" : "link" }
+        ],
+        "followers" : "2млн",
+        "following" : "773",
+        "publications" : "8 174",
+        "stories" : [
+            { "url": "/images/profile/story/1.jpg", "label" : "The Shop" },
+            { "url": "/images/profile/story/2.jpg", "label" : "BLR" },
+            { "url" : "/images/profile/story/3.jpg", "label" : "Genius Re..." },
+            { "url": "/images/profile/story/4.jpg", "label" : "Food Porn" }
+        ]
     },
     "content" : {
         "posts" : [

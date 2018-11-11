@@ -10,6 +10,7 @@ const SStory = styled.a`
 	height: 130px;
 	min-width: 130px;
     min-height: 130px;
+    margin-left: 5px;
     text-decoration: none;
     
     @media all and (max-width:600px){
@@ -29,8 +30,9 @@ const SImage = styled.img`
 	border-radius: 40px;
     
     @media all and (max-width:600px){
-		width: 60px;
-		height: 60px;
+		width: 65px;
+		height: 65px;
+        padding: 2px;
 	}
 `
 
@@ -40,6 +42,7 @@ const SLabel = styled.span`
 
     @media all and (max-width:600px){
         font-size: 12px;
+        font-weight: normal;
     }
 `
 
