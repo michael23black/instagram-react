@@ -35,8 +35,8 @@ const SideLeft = styled(Side)`
     cursor: pointer; 
 `
 const SideCenter = styled(Side)`
-    justify-content: stretch;
-    flex-basis: 215px;
+    width: 215px;
+    min-width: 125px;
     @media all and (max-width:650px){
         display: none;
     }
@@ -77,10 +77,16 @@ class Header extends React.Component {
                     <SideLeft as='a' left>
                         <Badge url='/images/service/badge.png' />
                         <StyledSeparator scrolled={this.props.scrolled} />
-                        <StyledLogo url='/images/service/logo.png' scrolled={this.props.scrolled} />
+                        <StyledLogo 
+                            url='/images/service/logo.png' 
+                            scrolled={this.props.scrolled} 
+                        />
                     </SideLeft>
                     <SideCenter>
-                        <Input />
+                        <Input 
+                            deleteUrl='/images/service/delete.png' 
+                            findUrl='/images/service/find.png' 
+                        />
                     </SideCenter>
                     <SideRight>
                         <StyledIcon url='/images/service/search.png' />
