@@ -17,7 +17,8 @@
             { "url": "/images/profile/story/1.jpg", "label" : "The Shop" },
             { "url": "/images/profile/story/2.jpg", "label" : "BLR" },
             { "url" : "/images/profile/story/3.jpg", "label" : "Genius Re..." },
-            { "url": "/images/profile/story/4.jpg", "label" : "Food Porn" }
+            { "url": "/images/profile/story/4.jpg", "label" : "Food Porn" },
+            { "url": "/images/profile/story/5.png", "label" : "My GitHub", "href" : "https://github.com/michael23black" }
         ]
     },
     "content" : {

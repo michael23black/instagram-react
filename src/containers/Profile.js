@@ -141,6 +141,7 @@ class Profile extends React.Component {
                         <Story 
                             label={story.label} 
                             url={story.url} 
+                            href={story.href}
                             key={i}
                         />
                     )}
@@ -186,6 +187,7 @@ class Profile extends React.Component {
                         <Story 
                             label={story.label} 
                             url={story.url} 
+                            href={story.href}
                             key={i}
                         />
                     )}
