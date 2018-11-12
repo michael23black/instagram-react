@@ -17,14 +17,14 @@ const Component = styled.div`
 const Search = styled.input`
     width: 100%;
     box-sizing: border-box;
-    padding: 3px 0px 3px 26px;
+    padding: 3px 26px;
     background-color: initial;
     border: none;
     font-size: 14px;
     z-index: 3;
 `
 const Image = styled.div`
-    opacity: ${props => props.active ? '1' : '0'};
+    opacity: ${props => props.active ? '1' : '0'};/* а это и отвечает за исчезновение вот)*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,11 +75,14 @@ export default class Input extends React.Component {
         this.blurInput = this.blurInput.bind(this);
         this.d = this.d.bind(this);
     } 
-    d(){
-        this.setState({value : ''}); 
-        this.setState({content : 'Поиск'});
+    d(event){
+        //event.preventDefault();
+        this.setState({
+            value : '',
+            content : 'Поиск'
+        }); 
     }
-    focusInput(){
+    focusInput = () => {
         this.setState({focus : true});
         this.inputText.value = this.state.value;
         this.setState({placeholder : 'Поиск'});
@@ -94,16 +97,17 @@ export default class Input extends React.Component {
         }
         this.inputText.value = '';
         this.setState({placeholder: ''});
-        this.setState({focus:false});
-    }
+        this.setState({focus:false});//'это строка которая скрывает кнопки на onblur'
+    }//исчезает раньше чем клик
+
     render() {
         return(
-            <Component className={this.props.className}>
+            <Component onClick={() => this.d()} className={this.props.className}>
                 <ImageLeft active={this.state.focus}>
                     <img src={this.props.findUrl}/>
                 </ImageLeft>
                 <Search 
-                    onFocus={() => this.focusInput()}
+                    onFocus={this.focusInput}
                     onBlur={() => this.blurInput()}
                     placeholder={this.state.placeholder}
                     ref={(input) => { this.inputText = input; }} 
@@ -119,7 +123,7 @@ export default class Input extends React.Component {
                 <ImageRight active={this.state.focus}>
                     <img
                      src={this.props.deleteUrl}
-                     onClick={()=> this.d()}/>
+                     />
                 </ImageRight>
 
             </Component>

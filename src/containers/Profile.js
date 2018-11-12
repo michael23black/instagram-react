@@ -96,8 +96,23 @@ const StyledButton = styled(Button)`
     width: calc(100% - 20px);
     max-width: 240px;
 `
+const UserBlock = (props) =>
+    <User>
+                            <Name username={data.profile.name}/>
+                            <Description text={data.profile.text}/>
+                            {data.profile.feedback.map((link,i) =>
+                                <Feedback 
+                                    label={link.label}
+                                    view={link.view}
+                                    key={i}
+                                />
+                            )}
+                        </User>
+
 
 class Profile extends React.Component {
+
+    
     renderWide(){
         return(
             <Container>
@@ -123,26 +138,16 @@ class Profile extends React.Component {
                             <Counter count={data.profile.followers} label='подписчиков'/>
                             <Counter count={data.profile.following} label='подписки'/>
                         </CounterBlock>
-                        <User>
-                            <Name username={data.profile.name}/>
-                            <Description text={data.profile.text}/>
-                            {data.profile.feedback.map((link,i) =>
-                                <Feedback 
-                                    label={link.label}
-                                    view={link.view}
-                                    key={i}
-                                />
-                            )}
-                        </User>
+                        <UserBlock />
                     </InnerRight>
                 </Info>
                 <StoryBlock>
-                    {data.profile.stories.map((story, i) =>
+                    {data.profile.stories.map(story =>
                         <Story 
                             label={story.label} 
                             url={story.url} 
                             href={story.href}
-                            key={i}
+                            key={story.id}
                         />
                     )}
                 </StoryBlock>
@@ -163,12 +168,12 @@ class Profile extends React.Component {
                         <NameBlock>
                             <Nickname nickname={data.profile.nickname}/>
                             <Verification
-                                url='/images/service/verification.png' 
+                                url="/images/service/verification.png" 
                                 active={data.profile.verification} 
                             />
                             <ButtonProfile />
                         </NameBlock>
-                        <StyledButton label='Подписаться' />
+                        <StyledButton label="Подписаться" />
                     </InnerRight>
                 </Info>
                 <User>
@@ -183,12 +188,12 @@ class Profile extends React.Component {
                     )}
                 </User>
                 <StoryBlock>
-                    {data.profile.stories.map((story, i) =>
+                    {data.profile.stories.map(story =>
                         <Story 
                             label={story.label} 
                             url={story.url} 
                             href={story.href}
-                            key={i}
+                            key={story.id}
                         />
                     )}
                 </StoryBlock>

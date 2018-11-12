@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Badge from '../components/Badge.js';
+import Icon from '../components/Icon.js';
 import Separator from '../components/Separator.js';
 import Logo from '../components/Logo.js';
 import Input from '../components/Input.js';
@@ -61,7 +61,7 @@ const StyledLogo = styled(Logo)`
         display: none;
     }
 `
-const StyledIcon = styled(Badge)`
+const StyledIcon = styled(Icon)`
     margin-right: 30px;
 
     &:last-child{
@@ -75,7 +75,7 @@ class Header extends React.Component {
             <Container>
                 <Inner scrolled={this.props.scrolled}>
                     <SideLeft as='a' left>
-                        <Badge url='/images/service/badge.png' />
+                        <Icon url='/images/service/badge.png' />
                         <StyledSeparator scrolled={this.props.scrolled} />
                         <StyledLogo 
                             url='/images/service/logo.png' 

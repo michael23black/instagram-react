@@ -22,7 +22,6 @@ const Image = styled.img`
 		min-width: 75px;
 		min-height: 75px;	
 	}
-}
 `
 
 export default class Avatar extends React.Component {

@@ -7,11 +7,10 @@ const Component = styled.span`
     border-left: 1px solid #000000;
 `
 
-export default class Separator extends React.Component {
-    render() {
+const Separator = (props) => {
         return(
-            <Component className={this.props.className}>
-            </Component>
+            <Component className={props.className} />
         )
-    }
 }
+
+export default Separator;

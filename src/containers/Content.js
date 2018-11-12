@@ -32,15 +32,13 @@ const InnerPosts = styled(Inner)`
 `
 
 class Content extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			content : 'publication'
-		};
-		this.setContent = this.setContent.bind(this);
-	}
-	setContent(content){
-		this.setState({content : content});
+	state = {
+		content : 'publication'
+	};
+	setContent = (content) => {
+		this.setState({
+			content : content
+		});
 	}
 	render() {
 		const {content} = this.state;
