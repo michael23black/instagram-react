@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Component = styled.div`
+const Box = styled.div`
     display: flex;
     position:relative;
     justify-content: center;
@@ -102,7 +102,7 @@ export default class Input extends React.Component {
 
     render() {
         return(
-            <Component onClick={() => this.d()} className={this.props.className}>
+            <Box onClick={() => this.d()} className={this.props.className}>
                 <ImageLeft active={this.state.focus}>
                     <img src={this.props.findUrl}/>
                 </ImageLeft>
@@ -128,7 +128,7 @@ export default class Input extends React.Component {
                     />
                 </ImageRight>
 
-            </Component>
+            </Box>
         )
     }
 }

@@ -81,10 +81,10 @@ class Header extends React.Component {
                         />
                     </SideLeft>
                     <SideCenter>
-                        <Input 
+                        {/*<Input 
                             deleteUrl='/images/service/delete.png' 
                             findUrl='/images/service/find.png' 
-                        />
+                        />*/}
                     </SideCenter>
                     <SideRight>
                         <StyledIcon url='/images/service/search.png' />

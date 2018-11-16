@@ -16,6 +16,8 @@ const Inner = styled.div`
     flex-direction: column; 
     margin: 38px 20px;
 
+
+
     @media all and (max-width:600px){
         margin: 18px 20px;
     }

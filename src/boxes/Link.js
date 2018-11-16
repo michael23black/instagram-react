@@ -1,18 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Component = styled.a`
+const Box = styled.a`
     font-weight: bold;
     text-decoration: none; 
     cursor: pointer;
 `
 
-export default class Link extends React.Component {
-    render() {
-        return(
-            <Component className={this.props.className} href={this.props.href}>
-                {this.props.label}
-            </Component>
-        )
-    }
-}
+const Link = props =>(
+    <Box className={props.className} href={props.link}>
+        {props.label}
+    </Box>
+)
+const propTypes = {
+    link: PropTypes.string,
+    label: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+    link: '#'
+};
+
+Link.propTypes = propTypes;
+Link.defaultProps = defaultProps;
+export default Link;

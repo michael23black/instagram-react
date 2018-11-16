@@ -7,7 +7,7 @@ const Box = styled.img`
     width: 24px; 
 `
 
-const Icon = (props) => (
+const Icon = props => (
     <Box 
         className={props.className} 
         src={props.url}

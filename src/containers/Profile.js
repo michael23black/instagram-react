@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import {withSize} from 'react-sizeme';
 
 import Avatar from '../boxes/Avatar.js';
+
 import Button from '../boxes/Button.js';
-import ButtonProfile from '../boxes/ButtonProfile.js';
+import ComplaintButton from '../boxes/ComplaintButton.js';
 import Counter from '../boxes/Counter.js';
 import Name from '../boxes/Name.js';
 import Nickname from '../boxes/Nickname.js';
 import Verification from '../boxes/Verification.js';
-import Description from '../boxes/Description.js';
 import Feedback from '../boxes/Feedback.js';
 import Story from '../boxes/Story.js';
 
@@ -99,7 +99,7 @@ const StyledButton = styled(Button)`
 const UserBlock = (props) =>
     <User>
                             <Name username={data.profile.name}/>
-                            <Description text={data.profile.text}/>
+                            {data.profile.text}
                             {data.profile.feedback.map((link,i) =>
                                 <Feedback 
                                     label={link.label}
@@ -118,7 +118,8 @@ class Profile extends React.Component {
             <Container>
                 <Info>
                     <InnerLeft>
-                        <Avatar 
+                        <Avatar
+                             
                             url={data.profile.avatar}
                             newStories={data.profile.newStories}
                             nickname={data.profile.nickname}
@@ -132,7 +133,7 @@ class Profile extends React.Component {
                                 active={data.profile.verification} 
                             />
                             <Button label='Подписаться' />
-                            <ButtonProfile />
+                            <ComplaintButton />
                         </NameBlock>
                         <CounterBlock>
                             <Counter count={data.profile.publications} label='публикаций'/>
@@ -161,8 +162,9 @@ class Profile extends React.Component {
                 <Info>
                     <InnerLeft>
                         <Avatar 
+                             
                             url={data.profile.avatar}
-                            newStory={data.profile.newStories}
+                            newStories={data.profile.newStories}
                         />
                     </InnerLeft>
                     <InnerRight>
@@ -172,14 +174,14 @@ class Profile extends React.Component {
                                 url="/images/service/verification.png" 
                                 active={data.profile.verification} 
                             />
-                            <ButtonProfile />
+                            <ComplaintButton />
                         </NameBlock>
                         <StyledButton label="Подписаться" />
                     </InnerRight>
                 </Info>
                 <User>
                     <Name username={data.profile.name}/>
-                    <Description text={data.profile.text}/>
+                    {data.profile.text}
                     {data.profile.feedback.map((link,i) =>
                         <Feedback 
                             label={link.label}
@@ -209,9 +211,9 @@ class Profile extends React.Component {
     render() {
         const {width} = this.props.size;
         return(
-                <React.Fragment>
-                    {width >= 585 ? this.renderWide() : this.renderNarrow()}
-                </React.Fragment>
+            <React.Fragment>
+                {width >= 585 ? this.renderWide() : this.renderNarrow()}
+            </React.Fragment>
       
         )
     }

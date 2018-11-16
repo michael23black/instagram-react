@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Component = styled.a`
+const Box = styled.a`
     display: flex;
     position: relative;
     align-items: flex-start;
@@ -71,22 +72,34 @@ const Label =styled.span`
     color: #ffffff;
 `
 
-export default class Post extends React.Component {
-    render() {
-        return(
-            <Component href={this.props.href}>
-                <Image src={this.props.img}/> 
-                <Counter>
-                    <Inner>
-                        <Image src={this.props.settings.likeImg}/>
-                        <Label>{this.props.likes}</Label>
-                    </Inner>
-                    <Inner>
-                        <Image src={this.props.settings.commentImg}/>
-                        <Label>{this.props.comments}</Label>
-                    </Inner>
-                </Counter>           
-            </Component>
-        )
-    }
-}
+const Post = props => (
+    <Box className={props.className} href={props.link}>
+        <Image src={props.img}/> 
+        <Counter>
+            <Inner>
+                <Image src={props.settings.likeImg}/>
+                <Label>{props.likes}</Label>
+            </Inner>
+            <Inner>
+                <Image src={props.settings.commentImg}/>
+                <Label>{props.comments}</Label>
+            </Inner>
+        </Counter>           
+    </Box>
+)
+
+const propTypes = {
+    link: PropTypes.string,
+    img: PropTypes.string.isRequired,
+    settings: PropTypes.object.isRequired,
+    likes: PropTypes.string.isRequired,
+    comments: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+    link: '#',
+};
+
+Post.propTypes = propTypes;
+Post.defaultProps = defaultProps;
+export default Post;

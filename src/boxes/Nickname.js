@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Component = styled.div`
+const Box = styled.div`
     font-size: 32px;
     font-weight: lighter; 
     margin-right: 10px;
@@ -10,12 +11,15 @@ const Component = styled.div`
         font-size: 20px;
     } 
 `
-export default class Nickname extends React.Component {
-    render() {
-        return(
-            <Component className={this.props.className}>
-                {this.props.nickname}
-            </Component>
-        )
-    }
-}
+const Nickname = props => (
+    <Box className={props.className}>
+        {props.nickname}
+    </Box>
+);
+
+const propTypes = {
+    nickname: PropTypes.string.isRequired
+};
+
+Nickname.propTypes = propTypes;
+export default Nickname;

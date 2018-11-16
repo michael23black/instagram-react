@@ -1,22 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-
-const Component =styled.div`
+const Box =styled.div`
     margin-top: 7px;
-    }
 `
 const Image = styled.img`
     height: 29px;
     width: 103px;
 `
 
-export default class Logo extends React.Component {
-    render() {
-        return(
-            <Component className={this.props.className}>
-                <Image src={this.props.url} />
-            </Component>
-        )
-    }
-}
+const Logo = props => (
+    <Box className={props.className}>
+        <Image src={props.url} />
+    </Box>
+)
+
+const propTypes = {
+    url: PropTypes.string.isRequired
+};
+
+Logo.propTypes = propTypes;
+export default Logo;

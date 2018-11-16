@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {withSize} from 'react-sizeme';
 
 import Header from './Header.js';
 import Content from './Content.js';
@@ -33,6 +34,7 @@ class Main extends React.Component {
         this.setState({top : window.pageYOffset === 0});
     };
     render() {
+        const {width} = this.props.size;
         return(
             <Container>
                 <Header top={!this.state.top}/>
@@ -46,4 +48,4 @@ class Main extends React.Component {
     }
 }
 
-export default Main;
+export default withSize()(Main);

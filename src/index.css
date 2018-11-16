@@ -7,11 +7,11 @@ body {
 }
 a {
 	color: #000000;
+	outline: none;
 }
 a:focus, a:hover, a:link, a:visited, a:active {
 	outline: none;
 }
-::focus-outer, ::focus-inner {
-    border: 0;
-    padding: 0;
+button::-moz-focus-inner {
+  border: 0;
 }

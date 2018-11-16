@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Component = styled.a`
+const Box = styled.button`
     display: flex;
     justify-content: center;
     padding: 5px 9px;
@@ -14,12 +15,16 @@ const Component = styled.a`
     cursor: pointer;
 `
 
-export default class Button extends React.Component {
-    render() {
-        return(
-            <Component className={this.props.className}>
-                {this.props.label}
-            </Component>
-        )
-    }
-}
+const Button = props => (
+    <Box className={props.className}>
+        {props.label}
+    </Box>
+);
+
+const propTypes = {
+    label: PropTypes.string.isRequired
+};
+
+
+Button.propTypes = propTypes;
+export default Button;
