@@ -93,7 +93,7 @@ const propTypes = {
     img: PropTypes.string.isRequired,
     settings: PropTypes.object.isRequired,
     likes: PropTypes.string.isRequired,
-    comments: PropTypes.string.isRequired
+    comments: PropTypes.any.isRequired
 };
 
 const defaultProps = {

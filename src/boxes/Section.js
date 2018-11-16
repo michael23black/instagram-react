@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, {css} from 'styled-components';
 
-const Component = styled.a`
-    display: ${props => props.have ? 'none' : 'flex'};
+const Box = styled.div`
+    display: ${props => props.have 
+        ? 'none' : 'flex'
+    };
     flex-flow: row nowrap;
     align-items: center;
     height: 52px;
@@ -30,48 +32,53 @@ const Image = styled.img`
     width: 12px;
     height: 12px;
     filter: brightness(0%);
-    opacity: 0.6;
-    
-    ${props => props.active && css`
-        opacity: 1; 
-    `};
+    opacity: ${props => props.active ? '1' : '0.6'};
 
     @media all and (max-width:600px){
         width: 24px;
         height: 24px;
         opacity: 1;
-        filter: grayscale(0.9);
-
-        ${props => props.active && css`
-            filter: grayscale(0); 
-        `};
+        filter: ${props => props.active ? 'grayscale(0)' : 'grayscale(0.9)'};
     }
 `
 const Label =styled.span`
     margin-left: 5px; 
     font-weight: bold;
-    color: #999;
+    color: ${props => props.active ? '#000' : '#999'};
     text-transform: uppercase;
     letter-spacing: 2px;
-
-    ${props => props.active && css`
-        color: #000;
-    `};
 
     @media all and (max-width:600px){
         display: none;
 	}
 `
 
-export default class Section extends React.Component {
-    render() {
-        return(
-            <Component have={this.props.have} active={this.props.active} onClick={this.props.onClick} href={this.props.href}>
-                <Image active={this.props.active} src={this.props.img}/>
-                <Label active={this.props.active}>
-                    {this.props.label}
-                </Label>
-            </Component>
-        )
-    }
-}
+const Section = props => (
+    <Box 
+        className={props.className}
+        have={props.have} 
+        active={props.active} 
+        onClick={props.onClick} 
+    >
+        <Image active={props.active} src={props.img}/>
+        <Label active={props.active}>
+            {props.label}
+        </Label>
+    </Box>
+)
+
+const propTypes = {
+    active: PropTypes.bool,
+    label: PropTypes.string.isRequired,
+    have: PropTypes.bool,
+    img: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+    active: false,
+    have: false
+};
+
+Section.propTypes = propTypes;
+Section.defaultProps = defaultProps;
+export default Section;

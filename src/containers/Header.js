@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Icon from '../boxes/Icon.js';
@@ -20,7 +21,7 @@ const Inner = styled.div`
     flex-basis: 970px;
     margin: 20px 20px;
     transition: margin 0.2s linear;
-    margin: ${props => props.top ? '10px 20px' : '20px 20px'};
+    margin: ${props => props.top ? '20px 20px' : '10px 20px'};
 `
 const Side = styled.div`
     display: flex;
@@ -45,7 +46,7 @@ const SideRight = styled(Side)`
 `
 const StyledSeparator = styled(Separator)`
     transition: opacity 0.2s linear;
-    opacity: ${props => props.top ? '0' : '1'};
+    opacity: ${props => props.top ? '1' : '0'};
 
     @media all and (max-width:600px){
         display: none;
@@ -53,7 +54,7 @@ const StyledSeparator = styled(Separator)`
 `
 const StyledLogo = styled(Logo)`
     transition: opacity 0.2s linear;
-    opacity: ${props => props.top ? '0' : '1'};
+    opacity: ${props => props.top ? '1' : '0'};
 
     @media all and (max-width:600px){
         display: none;
@@ -70,26 +71,26 @@ const StyledIcon = styled(Icon)`
 class Header extends React.Component {
     render() {
         return(
-            <Container top={this.props.top}>
-                <Inner>
-                    <SideLeft as='a' left>
-                        <Icon url='/images/service/badge.png' />
-                        <StyledSeparator />
+            <Container>
+                <Inner top={this.props.top}>
+                    <SideLeft as="a" left>
+                        <Icon url="/images/service/badge.png" />
+                        <StyledSeparator top={this.props.top} />
                         <StyledLogo 
-                            url='/images/service/logo.png' 
-                             
+                            url="/images/service/logo.png" 
+                            top={this.props.top}
                         />
                     </SideLeft>
                     <SideCenter>
-                        {/*<Input 
-                            deleteUrl='/images/service/delete.png' 
-                            findUrl='/images/service/find.png' 
-                        />*/}
+                        <Input 
+                            deleteUrl="/images/service/delete.png" 
+                            findUrl="/images/service/find.png" 
+                        />
                     </SideCenter>
                     <SideRight>
-                        <StyledIcon url='/images/service/search.png' />
-                        <StyledIcon url='/images/service/activity.png' />
-                        <StyledIcon url='/images/service/profile.png' />
+                        <StyledIcon url="/images/service/search.png" />
+                        <StyledIcon url="/images/service/activity.png" />
+                        <StyledIcon url="/images/service/profile.png" />
                     </SideRight>
                 </Inner>
         </Container>
@@ -97,4 +98,14 @@ class Header extends React.Component {
     }
 }
 
+const propTypes = {
+    top: PropTypes.bool
+};
+
+const defaultProps = {
+    top: true
+};
+
+Header.propTypes = propTypes;
+Header.defaultProps = defaultProps;
 export default Header;

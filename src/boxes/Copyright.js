@@ -6,6 +6,10 @@ const Box = styled.span`
     font-weight: bold;
 	color: #999;
     text-transform: uppercase;
+
+    @media all and (max-width:600px) {
+        text-align: center;
+    }
 `
 const Copyright = props => (
     <Box className={props.className}>

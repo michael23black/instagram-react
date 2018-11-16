@@ -1,15 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Box = styled.button`
+const Box = styled.span`
+    margin: -15px 0px 0px 15px;
     font-size: 25px;
-    padding: 0px 0px 15px 15px;
-    border: none;
-    background-color: initial;
     cursor: pointer;
 
     @media all and (max-width:600px){
-        padding: 0px 0px 15px 0px;
+        margin: -15px 0px 0px -5px;
     }
 `
 

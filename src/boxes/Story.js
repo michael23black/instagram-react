@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Component = styled.a`
+const Box = styled.a`
     display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
@@ -47,13 +47,23 @@ const Label = styled.span`
     }
 `
 
-export default class Story extends React.Component {
-    render() {
-        return(
-            <Component href={this.props.href}>
-                <Image src={this.props.url}/>
-                <Label>{this.props.label}</Label>
-            </Component>
-        )
-    }
-}
+const Story = props =>(
+    <Box className={props.className} href={props.link}>
+        <Image src={props.url}/>
+        <Label>{props.label}</Label>
+    </Box>
+);
+
+const propTypes = {
+    link: PropTypes.string,
+    url: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+    link: '#'
+};
+
+Story.propTypes = propTypes;
+Story.defaultProps = defaultProps;
+export default Story;

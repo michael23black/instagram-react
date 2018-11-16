@@ -32,11 +32,6 @@ const LinkBlock = styled.div`
         justify-content: center;
 	}
 `
-const StyledCopyright = styled(Copyright)`
-    @media all and (max-width:600px) {
-        text-align: center;
-    }
-`
 const StyledLink = styled(Link)`
     margin: 0px 15px 10px 0px;
     color: #003572;
@@ -61,7 +56,7 @@ class Footer extends React.Component {
                         <StyledLink label='хэштеги' />
                         <StyledLink label='язык' />
                     </LinkBlock>
-                    <StyledCopyright label='@ 2018 instagram' />
+                    <Copyright label='@ 2018 instagram' />
                 </Inner>
             </Container>
         )

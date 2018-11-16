@@ -16,7 +16,7 @@ const Image = styled.img`
 	height: 150px;
 	padding: 1px;
     border: ${props => props.newStories 
-        ? '5px solid #efefef' : 'none'
+        ? '5px solid #fafafa' : 'none'
     };
     border-radius: 50%;
     background-color: #e6e6e6;
@@ -25,7 +25,7 @@ const Image = styled.img`
         width: 75px;
 		height: 75px;
         border: ${props => props.newStories 
-            ? '3px solid #efefef' : 'none'
+            ? '3px solid #fafafa' : 'none'
         };
 	}
 `
