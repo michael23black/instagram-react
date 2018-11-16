@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Section from '../components/Section.js';
-import Post from '../components/Post.js';
+import Section from '../boxes/Section.js';
+import Post from '../boxes/Post.js';
 
 import data from '../json/Data.json';
 

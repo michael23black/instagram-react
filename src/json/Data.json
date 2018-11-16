@@ -9,7 +9,7 @@
             { "label" : "#f52grams", "view" : "hashtag" },
             { "label" : "f52.co/instagram", "view" : "link" }
         ],
-        "newStory" : true,
+        "newStories" : true,
         "followers" : "2млн",
         "following" : "773",
         "publications" : "8 174",

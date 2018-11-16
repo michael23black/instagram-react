@@ -2,16 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import {withSize} from 'react-sizeme';
 
-import Avatar from '../components/Avatar.js';
-import Button from '../components/Button.js';
-import ButtonProfile from '../components/ButtonProfile.js';
-import Counter from '../components/Counter.js';
-import Name from '../components/Name.js';
-import Nickname from '../components/Nickname.js';
-import Verification from '../components/Verification.js';
-import Description from '../components/Description.js';
-import Feedback from '../components/Feedback.js';
-import Story from '../components/Story.js';
+import Avatar from '../boxes/Avatar.js';
+import Button from '../boxes/Button.js';
+import ButtonProfile from '../boxes/ButtonProfile.js';
+import Counter from '../boxes/Counter.js';
+import Name from '../boxes/Name.js';
+import Nickname from '../boxes/Nickname.js';
+import Verification from '../boxes/Verification.js';
+import Description from '../boxes/Description.js';
+import Feedback from '../boxes/Feedback.js';
+import Story from '../boxes/Story.js';
 
 import data from '../json/Data.json';
 
@@ -120,7 +120,8 @@ class Profile extends React.Component {
                     <InnerLeft>
                         <Avatar 
                             url={data.profile.avatar}
-                            newStory={data.profile.newStory}
+                            newStories={data.profile.newStories}
+                            nickname={data.profile.nickname}
                         />
                     </InnerLeft>
                     <InnerRight>
@@ -161,7 +162,7 @@ class Profile extends React.Component {
                     <InnerLeft>
                         <Avatar 
                             url={data.profile.avatar}
-                            newStory={data.profile.newStory}
+                            newStory={data.profile.newStories}
                         />
                     </InnerLeft>
                     <InnerRight>
@@ -208,9 +209,10 @@ class Profile extends React.Component {
     render() {
         const {width} = this.props.size;
         return(
-            <React.Fragment>
-                {width >= 585 ? this.renderWide() : this.renderNarrow() }
-            </React.Fragment>
+                <React.Fragment>
+                    {width >= 585 ? this.renderWide() : this.renderNarrow()}
+                </React.Fragment>
+      
         )
     }
 } 

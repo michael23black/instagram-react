@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Icon from '../components/Icon.js';
-import Separator from '../components/Separator.js';
-import Logo from '../components/Logo.js';
-import Input from '../components/Input.js';
-import Button from '../components/Button.js';
-import Link from '../components/Link.js';
+import Icon from '../boxes/Icon.js';
+import Separator from '../boxes/Separator.js';
+import Logo from '../boxes/Logo.js';
+import Input from '../boxes/Input.js';
 
 const Container = styled.div`
     display: flex;
@@ -22,7 +20,7 @@ const Inner = styled.div`
     flex-basis: 970px;
     margin: 20px 20px;
     transition: margin 0.2s linear;
-    margin: ${props => props.scrolled ? '10px 20px' : '20px 20px'};
+    margin: ${props => props.top ? '10px 20px' : '20px 20px'};
 `
 const Side = styled.div`
     display: flex;
@@ -47,7 +45,7 @@ const SideRight = styled(Side)`
 `
 const StyledSeparator = styled(Separator)`
     transition: opacity 0.2s linear;
-    opacity: ${props => props.scrolled ? '0' : '1'};
+    opacity: ${props => props.top ? '0' : '1'};
 
     @media all and (max-width:600px){
         display: none;
@@ -55,7 +53,7 @@ const StyledSeparator = styled(Separator)`
 `
 const StyledLogo = styled(Logo)`
     transition: opacity 0.2s linear;
-    opacity: ${props => props.scrolled ? '0' : '1'};
+    opacity: ${props => props.top ? '0' : '1'};
 
     @media all and (max-width:600px){
         display: none;
@@ -72,14 +70,14 @@ const StyledIcon = styled(Icon)`
 class Header extends React.Component {
     render() {
         return(
-            <Container>
-                <Inner scrolled={this.props.scrolled}>
+            <Container top={this.props.top}>
+                <Inner>
                     <SideLeft as='a' left>
                         <Icon url='/images/service/badge.png' />
-                        <StyledSeparator scrolled={this.props.scrolled} />
+                        <StyledSeparator />
                         <StyledLogo 
                             url='/images/service/logo.png' 
-                            scrolled={this.props.scrolled} 
+                             
                         />
                     </SideLeft>
                     <SideCenter>

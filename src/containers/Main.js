@@ -20,26 +20,22 @@ const Inner = styled.div`
 `
 
 class Main extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            scrolled : true
-        };
-        this.handleScroll = this.handleScroll.bind(this);
-    }
+    state = {
+        top: true
+    };
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     } 
-    handleScroll() {
-        this.setState({scrolled : window.pageYOffset === 0});
+    handleScroll = () => {
+        this.setState({top : window.pageYOffset === 0});
     };
     render() {
         return(
             <Container>
-                <Header scrolled={!this.state.scrolled}/>
+                <Header top={!this.state.top}/>
                 <Inner>
                     <Profile />
                     <Content />

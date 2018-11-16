@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Link from '../components/Link.js';
-import Copyright from '../components/Copyright.js';
+import Link from '../boxes/Link.js';
+import Copyright from '../boxes/Copyright.js';
 
 const Container = styled.div`
     display: flex;

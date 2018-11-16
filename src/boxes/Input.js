@@ -114,7 +114,9 @@ export default class Input extends React.Component {
                 />
                 <Inner active={this.state.focus}>
                     <InnerImage>
-                        <img src={this.props.findUrl}/> 
+                        <img  
+                            src={this.props.findUrl}
+                        /> 
                     </InnerImage>
                     <Text>
                         {this.state.content} 
@@ -122,12 +124,11 @@ export default class Input extends React.Component {
                 </Inner>
                 <ImageRight active={this.state.focus}>
                     <img
-                     src={this.props.deleteUrl}
-                     />
+                        src={this.props.deleteUrl}
+                    />
                 </ImageRight>
 
             </Component>
         )
     }
 }
-
