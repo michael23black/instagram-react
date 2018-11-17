@@ -32,19 +32,25 @@ const Image = styled.img`
     width: 12px;
     height: 12px;
     filter: brightness(0%);
-    opacity: ${props => props.active ? '1' : '0.6'};
+    opacity: ${props => props.active 
+        ? '1' : '0.6'
+    };
 
     @media all and (max-width:600px){
         width: 24px;
         height: 24px;
         opacity: 1;
-        filter: ${props => props.active ? 'grayscale(0)' : 'grayscale(0.9)'};
+        filter: ${props => props.active 
+            ? 'grayscale(0)' : 'grayscale(0.9)'
+        };
     }
 `
 const Label =styled.span`
     margin-left: 5px; 
     font-weight: bold;
-    color: ${props => props.active ? '#000' : '#999'};
+    color: ${props => props.active 
+        ? '#000' : '#999'
+    };
     text-transform: uppercase;
     letter-spacing: 2px;
 

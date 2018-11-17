@@ -42,7 +42,9 @@ class Content extends React.Component {
 	}
 	render() {
 		const {content} = this.state;
-		const posts = content === 'publication' ? data.content.posts : content === 'tagged' ? data.content.tagged : data.content.igtv;
+		const posts = content === 'publication' 
+			? data.content.posts : content === 'tagged' 
+			? data.content.tagged : data.content.igtv;
 		return (
 			<Container>
 				<InnerSections>

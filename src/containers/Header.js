@@ -21,7 +21,9 @@ const Inner = styled.div`
     flex-basis: 970px;
     margin: 20px 20px;
     transition: margin 0.2s linear;
-    margin: ${props => props.top ? '20px 20px' : '10px 20px'};
+    margin: ${props => props.top 
+        ? '20px 20px' : '10px 20px'
+    };
 `
 const Side = styled.div`
     display: flex;
@@ -46,7 +48,9 @@ const SideRight = styled(Side)`
 `
 const StyledSeparator = styled(Separator)`
     transition: opacity 0.2s linear;
-    opacity: ${props => props.top ? '1' : '0'};
+    opacity: ${props => props.top 
+        ? '1' : '0'
+    };
 
     @media all and (max-width:600px){
         display: none;
@@ -54,7 +58,9 @@ const StyledSeparator = styled(Separator)`
 `
 const StyledLogo = styled(Logo)`
     transition: opacity 0.2s linear;
-    opacity: ${props => props.top ? '1' : '0'};
+    opacity: ${props => props.top 
+        ? '1' : '0'
+    };
 
     @media all and (max-width:600px){
         display: none;
@@ -68,35 +74,32 @@ const StyledIcon = styled(Icon)`
     }
 `
 
-class Header extends React.Component {
-    render() {
-        return(
-            <Container>
-                <Inner top={this.props.top}>
-                    <SideLeft as="a" left>
-                        <Icon url="/images/service/badge.png" />
-                        <StyledSeparator top={this.props.top} />
-                        <StyledLogo 
-                            url="/images/service/logo.png" 
-                            top={this.props.top}
-                        />
-                    </SideLeft>
-                    <SideCenter>
-                        <Input 
-                            deleteUrl="/images/service/delete.png" 
-                            findUrl="/images/service/find.png" 
-                        />
-                    </SideCenter>
-                    <SideRight>
-                        <StyledIcon url="/images/service/search.png" />
-                        <StyledIcon url="/images/service/activity.png" />
-                        <StyledIcon url="/images/service/profile.png" />
-                    </SideRight>
-                </Inner>
-        </Container>
-        )
-    }
-}
+const Header = props => (
+    <Container>
+        <Inner top={props.top}>
+            <SideLeft as="a" left>
+                <Icon url="/images/service/badge.png" />
+                <StyledSeparator top={props.top} />
+                <StyledLogo 
+                    url="/images/service/logo.png" 
+                    top={props.top}
+                />
+            </SideLeft>
+            <SideCenter>
+                <Input 
+                    deleteUrl="/images/service/delete.png" 
+                    findUrl="/images/service/find.png" 
+                />
+            </SideCenter>
+            <SideRight>
+                <StyledIcon url="/images/service/search.png" />
+                <StyledIcon url="/images/service/activity.png" />
+                <StyledIcon url="/images/service/profile.png" />
+            </SideRight>
+        </Inner>
+    </Container>
+);
+
 
 const propTypes = {
     top: PropTypes.bool

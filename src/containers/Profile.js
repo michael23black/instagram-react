@@ -87,10 +87,10 @@ class Profile extends React.Component {
                     <NameBlock>
                         <Nickname nickname={data.profile.nickname} />
                         <Verification
-                            url='/images/service/verification.png' 
+                            url="/images/service/verification.png" 
                             active={data.profile.verification} 
                         />
-                        <Button label='Подписаться' />
+                        <Button label="Подписаться" />
                         <ComplaintButton />
                     </NameBlock>
                     <Counters subsInfo={data.profile.subsInfo} />

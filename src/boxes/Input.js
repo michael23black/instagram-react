@@ -24,9 +24,12 @@ const Search = styled.input`
     border: none;
     font-size: 14px;
     z-index: 3;
+    cursor: default;
 `
 const Image = styled.div`
-    opacity: ${props => props.active ? '1' : '0'};
+    opacity: ${props => props.active 
+        ? '1' : '0'
+    };
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +47,9 @@ const ImageRight = styled(Image)`
     background: url(${props => props.url}) no-repeat 50% 50%; 
 `
 const Inner = styled.div`
-    display: ${props => props.active ? 'none' : 'flex'};
+    display: ${props => props.active 
+        ? 'none' : 'flex'
+    };
     width: calc(100% - 52px);
     align-items: center;
     justify-content: center;
@@ -82,7 +87,7 @@ class Input extends React.Component {
     deleteContent(event) {
         const {width} = this.props.size;
         const xpos = event.nativeEvent.offsetX;
-        if (width-xpos<=26){
+        if (width - xpos <= 26){
             this.blurInput();
             this.inputText.blur();
         }

@@ -47,7 +47,7 @@ const Label = styled.span`
     }
 `
 
-const Story = props =>(
+const Story = props => (
     <Box className={props.className} href={props.link}>
         <Image src={props.url}/>
         <Label>{props.label}</Label>
