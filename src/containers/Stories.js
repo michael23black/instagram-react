@@ -21,7 +21,7 @@ const Stories = props => (
             <Story 
                 label={story.label} 
                 url={story.url} 
-                href={story.href}
+                link={story.link}
                 key={story.id}
             />
         )}

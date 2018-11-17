@@ -16,7 +16,7 @@
             { "id" : "s2", "url": "/images/profile/story/2.jpg", "label" : "BLR" },
             { "id" : "s3", "url" : "/images/profile/story/3.jpg", "label" : "Genius Re..." },
             { "id" : "s4", "url": "/images/profile/story/4.jpg", "label" : "Food Porn" },
-            { "id" : "s5", "url": "/images/profile/story/5.png", "label" : "My GitHub", "href" : "https://github.com/michael23black" }
+            { "id" : "s5", "url": "/images/profile/story/5.png", "label" : "My GitHub", "link" : "https://github.com/michael23black" }
         ]
     },
     "content" : {
@@ -43,12 +43,12 @@
         "igtv" : [
         ],
         "tagged" : [
-            { "url" : "/images/profile/tagged-sketch/1.png", "likes" : "190k", "comments" : 945 },
-            { "url" : "/images/profile/tagged-sketch/2.png", "likes" : "14k", "comments" : 450 },
-            { "url" : "/images/profile/tagged-sketch/3.png", "likes" : "2m", "comments" : 3.565 },
-            { "url" : "/images/profile/tagged-sketch/4.png", "likes" : "355", "comments" : 65 },
-            { "url" : "/images/profile/tagged-sketch/5.png", "likes" : "23k", "comments" : 655 },
-            { "url" : "/images/profile/tagged-sketch/6.png", "likes" : "10m", "comments" : 10.564 }
+            { "id" : "t1", "url" : "/images/profile/tagged-sketch/1.png", "likes" : "190k", "comments" : 945 },
+            { "id" : "t2", "url" : "/images/profile/tagged-sketch/2.png", "likes" : "14k", "comments" : 450 },
+            { "id" : "t3", "url" : "/images/profile/tagged-sketch/3.png", "likes" : "2m", "comments" : 3.565 },
+            { "id" : "t4", "url" : "/images/profile/tagged-sketch/4.png", "likes" : "355", "comments" : 65 },
+            { "id" : "t5", "url" : "/images/profile/tagged-sketch/5.png", "likes" : "23k", "comments" : 655 },
+            { "id" : "t6", "url" : "/images/profile/tagged-sketch/6.png", "likes" : "10m", "comments" : 10.564 }
         ]
     }
 }

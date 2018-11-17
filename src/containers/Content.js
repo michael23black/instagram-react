@@ -50,36 +50,36 @@ class Content extends React.Component {
 						onClick={() => this.setContent('publication')}
 						active={content === 'publication'}
 						have={data.content.posts.length === 0}
-						label='Публикации' 
-						img='/images/service/publication.png' 
-						key={1}
+						label="Публикации" 
+						img="/images/service/publication.png" 
+						key="se1"
 					/>
 					<Section
 						onClick={() => this.setContent('igtv')}
 						active={content === 'igtv'}
 						have={data.content.igtv.length === 0}
-						label='IGTV' 
-						img='/images/service/tv.png'
-						key={2}
+						label="IGTV" 
+						img="/images/service/tv.png"
+						key="se2"
 					/> 
 					<Section
 						onClick={() => this.setContent('tagged')}
 						active={content === 'tagged'}
 						have={data.content.tagged.length === 0}
-						label='Отметки' 
-						img='/images/service/tagged.png'
-						key={3}
+						label="Отметки" 
+						img="/images/service/tagged.png"
+						key="se3"
 					/>
 				</InnerSections>
 				<InnerPosts>
-					{posts.map((post, i) =>
+					{posts.map(post =>
 						<Post 
 							settings={{likeImg : '/images/service/like.png', commentImg : '/images/service/comment.png'}} 
 							href={post.href} 
 							img={post.url} 
 							likes={post.likes} 
 							comments={post.comments} 
-							key={i}
+							key={post.id}
 						/>
 					)}
 				</InnerPosts>
