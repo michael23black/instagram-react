@@ -15,7 +15,7 @@ import Descriptions from './Descriptions.js';
 
 import data from '../json/Data.json';
 
-const Storage = styled.div`
+const Container = styled.div`
     display: flex; 
     flex-direction: column;
 	padding: 130px 20px 0px 20px;
@@ -139,9 +139,9 @@ class Profile extends React.Component {
     render() {
         const {width} = this.props.size;
         return(
-            <Storage>
+            <Container>
                 {width >= 585 ? this.renderWide() : this.renderNarrow()}
-            </Storage>
+            </Container>
       
         )
     }

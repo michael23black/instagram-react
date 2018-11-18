@@ -8,27 +8,22 @@ const Box = styled.a`
 	align-items: center;
     justify-content: space-evenly;
     width: 130px;
-	height: 130px;
 	min-width: 130px;
-    min-height: 130px;
     margin-left: 5px;
     text-decoration: none;
     
     @media all and (max-width:600px){
         width: 75px;
-		height: 75px;
 		min-width: 75px;
-		min-height: 75px;
     }
 `
 
 const Image = styled.img`
 	width: 80px;
 	height: 80px;
-	box-sizing: border-box;
 	padding: 3px;
 	border: 1px solid #dbdbdb;
-	border-radius: 40px;
+	border-radius: 50%;
     
     @media all and (max-width:600px){
 		width: 65px;

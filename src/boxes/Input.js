@@ -73,18 +73,12 @@ const Text = styled.div`
 `
 
 class Input extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            content : 'Поиск',
-            focus : false,
-            inputValue: ''
-        };
-        this.focusInput = this.focusInput.bind(this);
-        this.blurInput = this.blurInput.bind(this);
-        this.deleteContent =this.deleteContent.bind(this);
-    } 
-    deleteContent(event) {
+    state = {
+        content : 'Поиск',
+        focus : false,
+        inputValue: ''
+    };
+    deleteContent = (event) => {
         const {width} = this.props.size;
         const xpos = event.nativeEvent.offsetX;
         if (width - xpos <= 26){
@@ -92,14 +86,14 @@ class Input extends React.Component {
             this.inputText.blur();
         }
     }
-    focusInput() {
+    focusInput = () => {
         this.inputText.value = this.state.inputValue;
         this.inputText.placeholder = 'Поиск';
         this.setState({
             focus : true
         });
     }
-    blurInput() {
+    blurInput = () => {
         if(this.inputText.value.length === 0){
             this.setState({
                 content : 'Поиск',
@@ -123,7 +117,7 @@ class Input extends React.Component {
             <Box className={this.props.className}>
                 <ImageLeft active={this.state.focus} url={this.props.findUrl} />
                 <Search 
-                    onClick={this.deleteContent}
+                    onClick={(event) => this.deleteContent(event)}
                     onFocus={this.focusInput}
                     onBlur={this.blurInput}
                     ref={(input) => { this.inputText = input; }} 

@@ -56,6 +56,7 @@ const StyledSeparator = styled(Separator)`
         display: none;
     }
 `
+
 const StyledLogo = styled(Logo)`
     transition: opacity 0.2s linear;
     opacity: ${props => props.top 
