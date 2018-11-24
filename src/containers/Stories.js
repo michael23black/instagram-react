@@ -64,6 +64,21 @@ class Stories extends React.Component{
     };
     componentDidMount(){
         this.defaultValue();
+        window.addEventListener('resize', this.handleResize);
+    };
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+    };
+    handleResize = () => {
+        if(this.storyBlock.scrollWidth > this.storyBlock.clientWidth){
+            this.setState({
+                rightPosition: false
+            });
+        }else{
+            this.setState({
+                rightPosition: true
+            });
+        }
     };
     clickScrollLeft = () => {
         this.setState({

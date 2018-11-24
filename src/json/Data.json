@@ -16,7 +16,15 @@
             { "id" : "s2", "url": "/images/profile/story/2.jpg", "label" : "BLR" },
             { "id" : "s3", "url" : "/images/profile/story/3.jpg", "label" : "Genius Re..." },
             { "id" : "s4", "url": "/images/profile/story/4.jpg", "label" : "Food Porn" },
-            { "id" : "s5", "url": "/images/profile/story/5.png", "label" : "My GitHub", "link" : "https://github.com/michael23black" }
+            { "id" : "s5", "url": "/images/profile/story/5.png", "label" : "My GitHub", "link" : "https://github.com/michael23black" },
+            { "id" : "s1", "url": "/images/profile/story/1.jpg", "label" : "The Shop" },
+            { "id" : "s2", "url": "/images/profile/story/2.jpg", "label" : "BLR" },
+            { "id" : "s3", "url" : "/images/profile/story/3.jpg", "label" : "Genius Re..." },
+            { "id" : "s4", "url": "/images/profile/story/4.jpg", "label" : "Food Porn" },
+            { "id" : "s1", "url": "/images/profile/story/1.jpg", "label" : "The Shop" },
+            { "id" : "s2", "url": "/images/profile/story/2.jpg", "label" : "BLR" },
+            { "id" : "s3", "url" : "/images/profile/story/3.jpg", "label" : "Genius Re..." },
+            { "id" : "s4", "url": "/images/profile/story/4.jpg", "label" : "Food Porn" }
         ]
     },
     "content" : {
