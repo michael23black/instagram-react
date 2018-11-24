@@ -20,9 +20,9 @@ const Container = styled.div`
 
 const Counters = props => (
     <Container>
-        <Counter count={props.subsInfo.publications} label='публикаций'/>
-        <Counter count={props.subsInfo.followers} label='подписчиков'/>
-        <Counter count={props.subsInfo.following} label='подписки'/>
+        <Counter count={props.subsInfo.publications} label="публикаций" />
+        <Counter count={props.subsInfo.followers} label="подписчиков" />
+        <Counter count={props.subsInfo.following} label="подписки" />
     </Container>
 );
 
